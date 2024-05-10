@@ -67,7 +67,7 @@ public class Controller {
 
 
         }
-        //hi 1
+        //hi 12
     void changeScene(ActionEvent event, String fxmlFile,String title,String name, String password){
         Parent pane = null;
         if(name!= null && password != null){
