@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: green;" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.HelloController">
+<AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: green;" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.Controller">
     <children>
         <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0">
             <children>
@@ -37,6 +37,11 @@
                                         <Image url="@../icon/img_3.png" />
                                     </image>
                                 </ImageView>
+                        <ImageView fitHeight="159.0" fitWidth="162.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/KfupmLogo1.png" />
+                           </image>
+                        </ImageView>
                             </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -46,11 +51,11 @@
             </StackPane>
                 <StackPane prefHeight="500.0" prefWidth="454.0" style="-fx-background-color: green;">
                <children>
-                        <Pane fx:id="paneLeft" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="634.0" style="-fx-background-color: green;" stylesheets="@../../../application.css">
+                        <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="634.0" style="-fx-background-color: green;" stylesheets="@../../../application.css">
                             <children>
-                                <TextField fx:id="userTextF" layoutX="79.0" layoutY="191.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Username" />
-                                <PasswordField fx:id="passTextF" layoutX="79.0" layoutY="244.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Password" />
-                                <Button fx:id="signInBtn" layoutX="234.0" layoutY="293.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="LOGIN" textFill="WHITE" />
+                                <TextField fx:id="tf_userName" layoutX="79.0" layoutY="191.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Username" />
+                                <PasswordField fx:id="tf_password" layoutX="79.0" layoutY="244.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Password" />
+                                <Button fx:id="loginBtn" layoutX="167.0" layoutY="302.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="35.0" prefWidth="100.0" text="LOGIN" textFill="WHITE" />
                                 <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="58.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../icon/img_1.png" />
@@ -61,17 +66,17 @@
                                         <Image url="@../icon/password_30px.png" />
                                     </image>
                                 </ImageView>
-                                <Label layoutX="375.0" layoutY="59.0" prefHeight="25.0" prefWidth="51.0" rotate="270.0" text="L O G I N" textFill="WHITE" />
+                                <Label layoutX="375.0" layoutY="42.0" prefHeight="25.0" prefWidth="51.0" text="L O G I N" textFill="WHITE" />
                                 <Line endX="150.5" endY="-10.5" layoutX="249.0" layoutY="52.0" startX="150.5" startY="-51.0" stroke="WHITE" />
                                 <Line endX="331.0" layoutX="58.0" layoutY="226.0" startY="-1.52587890625E-5" stroke="WHITE" />
                                 <Line endX="331.0" layoutX="58.0" layoutY="279.0" startY="-1.52587890625E-5" stroke="WHITE" />
                                 <Line endX="1.0" endY="349.0" layoutX="14.0" layoutY="42.0" startX="1.0" startY="80.0" stroke="WHITE" strokeWidth="0.2" />
                                 <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="217.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../icon/sheets_80px.png" />
+                                        <Image url="@../icon/sheetsLogo.png" />
                                     </image>
                                 </ImageView>
-                                <Label fx:id="forgotPass" layoutX="179.0" layoutY="372.0" prefHeight="20.0" prefWidth="111.0" text="Forgot Pasword?" textAlignment="CENTER" textFill="WHITE">
+                                <Label fx:id="forgotPass" layoutX="162.0" layoutY="348.0" prefHeight="20.0" prefWidth="111.0" text="Forgot Pasword?" textAlignment="CENTER" textFill="WHITE">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -82,7 +87,11 @@
                                     </font>
                                 </Label>
                                 <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
-                        <Button fx:id="CreateAccountBtn" layoutX="109.0" layoutY="293.0" mnemonicParsing="false" onAction="#onCreateButtonClick" prefHeight="35.0" prefWidth="111.0" text="Create Account" />
+                        <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="58.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/Person.png" />
+                           </image>
+                        </ImageView>
                             </children>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />

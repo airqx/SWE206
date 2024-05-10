@@ -11,33 +11,15 @@
 .separator .line {
     -fx-border-width: 0.1;
 }
-#userTextF{
+#tf_userName{
     -fx-background-color: transparent ;
     -fx-text-fill: white;
 }
-#passTextF{
+#tf_password{
     -fx-background-color: transparent ;
     -fx-text-fill: white;
 }
-#signInBtn{
-    -fx-background-color: transparent ;
-    -fx-border-style : solid;
-    -fx-border-width: 2;
-    -fx-text-fill: white;
-    -fx-border-radius: 1.5em;
-    -fx-border-color: #838FA3;
-    -fx-cursor: HAND;
-}
-#signInBtn:hover{
-    -fx-background-color: transparent ;
-    -fx-border-style : solid;
-    -fx-border-width: 2;
-    -fx-text-fill: white;
-    -fx-border-radius: 1.5em;
-    -fx-border-color: #EEF0F2;
-    -fx-cursor: HAND;
-}
-#CreateAccountBtn{
+#loginBtn{
     -fx-background-color: transparent ;
     -fx-border-style : solid;
     -fx-border-width: 2;
@@ -46,7 +28,7 @@
     -fx-border-color: #838FA3;
     -fx-cursor: HAND;
 }
-#CreateAccountBtn:hover{
+#loginBtn:hover{
     -fx-background-color: transparent ;
     -fx-border-style : solid;
     -fx-border-width: 2;
@@ -55,6 +37,8 @@
     -fx-border-color: #EEF0F2;
     -fx-cursor: HAND;
 }
+
+
 #textArea{
     -fx-background-color: transparent ;
     -fx-text-fill: white;
@@ -63,15 +47,7 @@
     -fx-text-fill: #069BFF;
     -fx-cursor: HAND;
 }
-#btn_signinLabel:hover{
-    -fx-text-fill: #069BFF;
-    -fx-cursor: HAND;
-}
 
-#EmailTextF{
-    -fx-background-color: transparent ;
-    -fx-text-fill: white;
-}
 #closeBtn{
     -fx-cursor: HAND;
 }
