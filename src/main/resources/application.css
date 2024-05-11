@@ -1,9 +1,15 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#loginAnchorPane{
-    -fx-background-color: linear-gradient(to top right, #172235, #838FA3);
-}
+
 .backgroundColor{
-    -fx-background-color: linear-gradient(to right,#35B8C9,#008000);
+
+        /* Using HSL color */
+
+    -fx-background-color:  #178850;
+
+}
+.backgroundColor1 {
+    -fx-background-color: linear-gradient(to top left, rgba(84,191,84,0.91), #178850);
+
 }
 
 
@@ -25,7 +31,7 @@
     -fx-border-width: 2;
     -fx-text-fill: white;
     -fx-border-radius: 1.5em;
-    -fx-border-color: #838FA3;
+    -fx-border-color: white;
     -fx-cursor: HAND;
 }
 #loginBtn:hover{
@@ -34,7 +40,7 @@
     -fx-border-width: 2;
     -fx-text-fill: white;
     -fx-border-radius: 1.5em;
-    -fx-border-color: #EEF0F2;
+    -fx-border-color: #178850;
     -fx-cursor: HAND;
 }
 
@@ -44,7 +50,7 @@
     -fx-text-fill: white;
 }
 #forgotPass:hover{
-    -fx-text-fill: #069BFF;
+    -fx-text-fill: #178850;
     -fx-cursor: HAND;
 }
 
