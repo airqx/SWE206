@@ -8,22 +8,20 @@
 
 }
 .backgroundColor1 {
-    -fx-background-color: linear-gradient(to top left, rgba(84,191,84,0.91), #178850);
+
+    -fx-background-color: linear-gradient(to top left, #549159, #178850);
 
 }
-
-
-
 .separator .line {
     -fx-border-width: 0.1;
 }
 #tf_userName{
     -fx-background-color: transparent ;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFFFF;
 }
 #tf_password{
     -fx-background-color: transparent ;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFFFF;
 }
 #loginBtn{
     -fx-background-color: transparent ;
@@ -31,29 +29,27 @@
     -fx-border-width: 2;
     -fx-text-fill: white;
     -fx-border-radius: 1.5em;
-    -fx-border-color: white;
-    -fx-cursor: HAND;
+    -fx-border-color: #FFFFFFFF;
+
 }
 #loginBtn:hover{
     -fx-background-color: transparent ;
     -fx-border-style : solid;
     -fx-border-width: 2;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFFFF;
     -fx-border-radius: 1.5em;
     -fx-border-color: #178850;
-    -fx-cursor: HAND;
+
 }
 
 
 #textArea{
     -fx-background-color: transparent ;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFFFF;
 }
 #forgotPass:hover{
     -fx-text-fill: #178850;
-    -fx-cursor: HAND;
+
 }
 
-#closeBtn{
-    -fx-cursor: HAND;
-}
+

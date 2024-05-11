@@ -21,7 +21,7 @@
             <children>
                 <StackPane prefHeight="500.0" prefWidth="360.0" styleClass="backgroundColor">
                <children>
-                        <Pane prefHeight="504.0" prefWidth="363.0" styleClass="backgroundColor" stylesheets="@../../../application.css">
+                        <Pane fx:id="paneLeft" prefHeight="504.0" prefWidth="363.0" styleClass="backgroundColor" stylesheets="@../../../application.css">
                             <children>
                                 <Label alignment="CENTER" layoutX="54.0" layoutY="179.0" prefHeight="25.0" prefWidth="222.0" text="Reservation System" textAlignment="CENTER" textFill="WHITE">
                                     <font>
@@ -30,7 +30,7 @@
                                 </Label>
                                 <Line endX="-83.0" endY="8.0" layoutX="154.0" layoutY="212.0" startX="106.0" startY="8.0" stroke="WHITE" />
                                 <Text fill="WHITE" layoutX="125.0" layoutY="469.0" opacity="0.5" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Project" textAlignment="CENTER" />
-                                <ImageView fx:id="closeBtn" fitHeight="500.0" fitWidth="357.0" layoutX="7.0" opacity="0.15" pickOnBounds="true">
+                                <ImageView fitHeight="500.0" fitWidth="357.0" layoutX="7.0" opacity="0.15" pickOnBounds="true">
                                     <image>
                                         <Image url="@../icon/img_1.png" />
                                     </image>
@@ -49,11 +49,11 @@
             </StackPane>
                 <StackPane prefHeight="500.0" prefWidth="454.0">
                <children>
-                        <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="634.0" styleClass="backgroundColor1" stylesheets="@../../../application.css">
+                        <Pane fx:id="paneRight" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="634.0" styleClass="backgroundColor1" stylesheets="@../../../application.css">
                             <children>
                                 <TextField fx:id="tf_userName" layoutX="79.0" layoutY="191.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Username" style="-fx-background-color: pagie;" />
                                 <PasswordField fx:id="tf_password" layoutX="79.0" layoutY="244.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Password" />
-                                <Button fx:id="loginBtn" alignment="CENTER" layoutX="57.0" layoutY="304.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="35.0" prefWidth="332.0" text="LOGIN" textFill="WHITE" />
+                                <Button fx:id="loginBtn" cancelButton="true" layoutX="57.0" layoutY="304.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="35.0" prefWidth="332.0" text="LOGIN" textFill="WHITE" />
                                 <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="58.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../icon/password_30px.png" />
@@ -64,12 +64,12 @@
                                 <Line endX="331.0" layoutX="58.0" layoutY="226.0" startY="-1.52587890625E-5" stroke="WHITE" />
                                 <Line endX="331.0" layoutX="58.0" layoutY="279.0" startY="-1.52587890625E-5" stroke="WHITE" />
                                 <Line endX="1.0" endY="349.0" layoutX="14.0" layoutY="42.0" startX="1.0" startY="80.0" stroke="WHITE" strokeWidth="0.2" />
-                                <Label fx:id="warnLabel" layoutX="48.0" layoutY="400.0" prefHeight="35.0" prefWidth="357.0" textFill="#f8f8f8" visible="false" wrapText="true">
+                                <Label fx:id="warnLabel" alignment="CENTER" layoutX="70.0" layoutY="360.0" prefHeight="32.0" prefWidth="310.0" text="sdsdsas" textFill="WHITE" visible="false" wrapText="true">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
                                 </Label>
-                                <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
+                                <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="#fc0f0f" visible="false" />
                         <ImageView fitHeight="35.0" fitWidth="28.0" layoutX="55.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/Person.png" />

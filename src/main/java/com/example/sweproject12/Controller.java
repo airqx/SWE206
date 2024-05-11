@@ -13,25 +13,27 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class Controller {
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private Pane paneLeft;
+
+
 
     @FXML
     private PasswordField tf_password;
-
     @FXML
     private TextField tf_userName;
-
     @FXML
     private Button loginBtn;
     @FXML
     private Pane LoginPane;
+
+    @FXML
+    private Label warnLabel;
+    @FXML
+    private Label aa;
 
     @FXML
     void onLoginBtnClicked(ActionEvent event) throws Exception {
@@ -40,7 +42,9 @@ public class Controller {
         ArrayList<String> data = new ArrayList<>();
         data.add("A");
         if (name.equals("") || password.equals("")) {
-            System.out.println("enter name or password");
+            warnLabel.setVisible(true);
+            warnLabel.setText("Name or Password is Empty");
+
         }
         else{
             // for those working in back end: this is similar idea we need to check first the user is in the database
@@ -50,12 +54,16 @@ public class Controller {
                 System.out.println("password verified");
                 try {
                     changeScene(event,"AfterLogin.fxml","AfterLogin",tf_userName.getText(),tf_password.getText());
+
+
+
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
             }
             else {
-                System.out.println("wrong password");
+                warnLabel.setVisible(true);
+                warnLabel.setText("Wrong Password!");
             }
 
 
@@ -75,6 +83,7 @@ public class Controller {
                 Stage stage = (Stage) LoginPane.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle(title);
+
 
 
             } catch (Exception e) {
