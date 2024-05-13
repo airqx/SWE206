@@ -1,0 +1,49 @@
+.backgroundColor {
+    /* Using HSL color */
+    -fx-background-color: #178850;
+}
+
+.backgroundColor1 {
+    -fx-background-color: linear-gradient(to top left, #549159, #178850);
+}
+
+.separator .line {
+    -fx-border-width: 0.1;
+}
+
+#tf_userName {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
+}
+
+#tf_password {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
+}
+
+#loginBtn {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-text-fill: white;
+    -fx-border-radius: 1.5em;
+    -fx-border-color: #FFFFFF;
+}
+
+#loginBtn:hover {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-width: 2;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-radius: 1.5em;
+    -fx-border-color: #178850;
+}
+
+#textArea {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
+}
+
+#forgotPass:hover {
+    -fx-text-fill: #178850;
+}
