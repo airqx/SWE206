@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.Controller">
+   <children>
+      <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0">
+         <children>
+            <StackPane prefHeight="500.0" prefWidth="273.0" style="-fx-background-color: green;">
+               <children>
+                  <Pane fx:id="paneLeft" prefHeight="500.0" prefWidth="345.0" styleClass="backgroundColor" stylesheets="@../../../application.css">
+                     <children>
+                        <Label fx:id="lbl_paneLeft" layoutX="32.0" layoutY="179.0" prefHeight="25.0" prefWidth="209.0" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Line endX="157.0" layoutX="115.0" layoutY="218.0" startX="-115.0" stroke="WHITE" />
+                        <Text fill="WHITE" layoutX="125.0" layoutY="469.0" opacity="0.5" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Project" textAlignment="CENTER" />
+                        <ImageView fx:id="closeBtn" fitHeight="110.0" fitWidth="113.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/Capture-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="closeBtn1" fitHeight="77.0" fitWidth="227.0" layoutX="23.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/rightkfupm.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btn_LogOut" layoutY="474.0" mnemonicParsing="false" onAction="#onLogOutBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../application.css" text="LogOut" />
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="500.0" prefWidth="524.0" style="-fx-background-color: green;">
+               <children>
+                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../application.css">
+                     <children>
+                        <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="452.0" layoutY="42.0" prefHeight="25.0" prefWidth="40.0" text="  Main" textAlignment="CENTER" textFill="#178850">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Line accessibleRole="BUTTON" endX="150.5" endY="-10.5" layoutX="325.0" layoutY="52.0" startX="150.5" startY="-51.0" stroke="#178850" styleClass="line" />
+                        <Line endX="1.0" endY="349.0" layoutX="14.0" layoutY="42.0" startX="1.0" startY="80.0" stroke="WHITE" strokeWidth="0.2" />
+                        <Label fx:id="warnLabel" layoutX="48.0" layoutY="400.0" prefHeight="35.0" prefWidth="357.0" textFill="#f8f8f8" visible="false" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
+                        <Button fx:id="btn_joinEvent" cancelButton="true" layoutX="23.0" layoutY="358.0" mnemonicParsing="false" onAction="#onJoinEventClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Join an open event" textFill="WHITE" />
+                        <Button fx:id="btn11" cancelButton="true" layoutX="23.0" layoutY="151.0" mnemonicParsing="false" onAction="#onReserveFacilityClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Reserve facility" textFill="WHITE" />
+                        <Button fx:id="btn_viewReservation" cancelButton="true" layoutX="234.0" layoutY="151.0" mnemonicParsing="false" onAction="#onViewReBtnClicked" prefHeight="35.0" prefWidth="184.0" styleClass="backgroundColor" text="View reservation" textFill="WHITE" />
+                        <ImageView fx:id="iconReserve" fitHeight="137.0" fitWidth="142.0" layoutX="31.0" layoutY="14.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/resFasaculty.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iconGender" fitHeight="104.0" fitWidth="107.0" layoutX="273.0" layoutY="33.0" opacity="0.96" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/View.PNG" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="iconJoin" fitHeight="137.0" fitWidth="142.0" layoutX="38.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icon/joinAnopen.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../../application.css" />
+      <URL value="@../../../application.css" />
+   </stylesheets>
+</AnchorPane>
