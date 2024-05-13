@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.awt.event.MouseEvent;
@@ -62,6 +63,10 @@ public class Controller {
     private TableView<String> TapbeView;
     @FXML
     private String[] choice= {"a", "b"};
+    @FXML
+    private VBox vbox1test;
+
+
 
 
 
@@ -115,12 +120,13 @@ public class Controller {
     @FXML
     void onJoinEventClicked(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfterLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("JoinAnOpenEvent.fxml"));
             Parent root = loader.load();
-
-            // Get the controller of the new scene
+            Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Join Event");
             Controller newController = loader.getController();
-            lbl_paneLeft.setText("Welcome working now ");
+
 
 
         } catch (IOException e) {
@@ -129,9 +135,55 @@ public class Controller {
 
     }
     @FXML
-    void onOpenReservationClicked(ActionEvent event) {
-            changeScene(event, "openReservation.fxml", "openReservation","a","a");
+    void onReserveFacilityClicked(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("openReservation.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Reserve facility");
+            Controller newController = loader.getController();
+
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+    @FXML
+    void onViewReBtnClicked(ActionEvent event) {
+        changeScene(event, "ViewReservation.fxml", "View Reservation","a","a");
+
+    }
+
+    @FXML
+    void onBackBtnClicked(ActionEvent event) {
+        changeScene(event, "AfterLogin.fxml", "After Login","a","a");
+
+    }
+
+    @FXML
+    void onLogOutBtnClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
+        Parent root = loader.load();
+        Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.setTitle("LoginPage");
+        Controller newController = loader.getController();
+        newController.warnLabel.setVisible(true);
+        newController.warnLabel.setText("LogOut successful");
+
+
+
+    }
+
+    @FXML
+    void onModifyBtnClicked(ActionEvent event) {
+        System.out.println("hi");
+        vbox1test.setVisible(true);
+
+    }
+
 
 
 

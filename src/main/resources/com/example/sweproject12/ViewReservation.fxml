@@ -3,10 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -15,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -56,7 +54,7 @@
                <children>
                   <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../application.css">
                      <children>
-                        <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="37.0" prefHeight="17.0" prefWidth="87.0" text="Reservation" textAlignment="CENTER" textFill="#178850">
+                        <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="413.0" layoutY="37.0" prefHeight="20.0" prefWidth="107.0" text="View reservation" textAlignment="CENTER" textFill="#178850">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -69,24 +67,37 @@
                            </font>
                         </Label>
                         <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
-                        <DatePicker layoutX="202.0" layoutY="71.0" prefHeight="25.0" prefWidth="167.0" />
-                        <TextField layoutX="402.0" layoutY="71.0" prefHeight="25.0" prefWidth="120.0" promptText="Event name" />
-                        <Label layoutX="164.0" layoutY="75.0" prefHeight="17.0" prefWidth="40.0" text="Date" />
-                        <Button layoutX="452.0" layoutY="111.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" styleClass="backgroundColor" text="Search" textFill="WHITE" />
                         <Line endX="147.0" layoutX="376.0" layoutY="147.0" startX="-376.0" style="-fx-fill: black;" />
-                        <ScrollPane layoutX="2.0" layoutY="148.0" prefHeight="279.0" prefWidth="520.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0" />
-                          </content>
+                        <ScrollPane layoutX="2.0" layoutY="89.0" prefHeight="279.0" prefWidth="520.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="272.0" prefWidth="503.0">
+                                 <children>
+                                    <VBox layoutY="1.0" prefHeight="264.0" prefWidth="503.0">
+                                       <children>
+                                          <HBox prefHeight="35.0" prefWidth="503.0" spacing="30.0">
+                                             <children>
+                                                <Label text="Label" />
+                                                <Label text="Label" />
+                                                <Label text="Label" />
+                                                <Label text="Label" />
+                                                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="66.0" styleClass="backgroundColor" stylesheets="@../../../application.css" text="Open" textFill="WHITE" />
+                                                <Button mnemonicParsing="false" onAction="#onModifyBtnClicked" prefHeight="17.0" prefWidth="71.0" styleClass="backgroundColor" stylesheets="@../../../application.css" text="Modify" textFill="WHITE" />
+                                                <Button mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" styleClass="backgroundColor" stylesheets="@../../../application.css" text="Cancel" textFill="WHITE" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                           </content>
                         </ScrollPane>
-                        <Button layoutX="452.0" layoutY="435.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" styleClass="backgroundColor" stylesheets="@../../../application.css" text="Confirm" textFill="WHITE" />
-                        <MenuButton layoutX="16.0" layoutY="71.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="139.0" text="Type">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Facility" />
-                            <MenuItem mnemonicParsing="false" text="Room" />
-                              <MenuItem mnemonicParsing="false" text="Gender-Specifc" />
-                          </items>
-                        </MenuButton>
+                        <VBox fx:id="vbox1test" alignment="CENTER" layoutX="171.0" layoutY="378.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="93.0" prefWidth="182.0" spacing="5.0" visible="false">
+                           <children>
+                              <TextField promptText="name" />
+                              <TextField promptText="name" />
+                              <TextField promptText="---" />
+                              <Button mnemonicParsing="false" style="-fx-background-color: #178850;" text="Modify" textFill="WHITE" />
+                           </children>
+                        </VBox>
                      </children>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
