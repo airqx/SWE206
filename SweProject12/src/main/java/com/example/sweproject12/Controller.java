@@ -1,9 +1,12 @@
 package com.example.sweproject12;
 
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -12,11 +15,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class Controller {
-
     @FXML
     private PasswordField tf_password;
     @FXML
@@ -47,6 +52,20 @@ public class Controller {
     @FXML
     private ImageView iconReserve;
     @FXML
+    private ChoiceBox<String> ChoiceBox;
+    @FXML
+    private TableColumn<String,String> ID ;
+    @FXML
+    private TableColumn<String,String> Room;
+
+    @FXML
+    private TableView<String> TapbeView;
+    @FXML
+    private String[] choice= {"a", "b"};
+
+
+
+    @FXML
     void onLoginBtnClicked(ActionEvent event) throws Exception {
         String name = tf_userName.getText();
         String password = tf_password.getText();
@@ -62,7 +81,8 @@ public class Controller {
             if (ob1.verifyPassword(tf_password.getText())) {
                 System.out.println("password verified");
                 try {
-                    changeScene(event, "AfterLogin.fxml", "AfterLogin", tf_userName.getText(), tf_password.getText());
+                    changeScene(event, "AfterLogin.fxml", "AfterLogin", "a", "a");
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -91,6 +111,7 @@ public class Controller {
             }
         }
     }
+
     @FXML
     void onJoinEventClicked(ActionEvent event) {
         try {
@@ -100,10 +121,15 @@ public class Controller {
             // Get the controller of the new scene
             Controller newController = loader.getController();
             lbl_paneLeft.setText("Welcome working now ");
-            
 
 
-    } catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }}
+
+    }
+    @FXML
+    void onOpenReservationClicked(ActionEvent event) {
+            changeScene(event, "openReservation.fxml", "openReservation","a","a");
+    }
+}
