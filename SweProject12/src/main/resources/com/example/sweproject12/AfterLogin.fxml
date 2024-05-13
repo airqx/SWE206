@@ -64,9 +64,9 @@
                         </Label>
                         <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
                         <Button fx:id="btn_joinEvent" cancelButton="true" layoutX="38.0" layoutY="142.0" mnemonicParsing="false" onAction="#onJoinEventClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Join an open event" textFill="WHITE" />
-                        <Button fx:id="btn11" cancelButton="true" layoutX="262.0" layoutY="142.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Open reservation event" textFill="WHITE" />
+                        <Button fx:id="btn11" cancelButton="true" layoutX="262.0" layoutY="142.0" mnemonicParsing="false" onAction="#onOpenReservationClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Open reservation event" textFill="WHITE" />
                         <Button fx:id="btn111" cancelButton="true" layoutX="33.0" layoutY="357.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Reserve facility" textFill="WHITE" />
-                        <Button fx:id="btn1111" cancelButton="true" layoutX="246.0" layoutY="357.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" styleClass="backgroundColor" text="Reserve gender specific room" textFill="WHITE" />
+                        <Button fx:id="btn1111" cancelButton="true" layoutX="246.0" layoutY="357.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" styleClass="backgroundColor" text="View reservation" textFill="WHITE" />
                         <ImageView fx:id="iconReserve" fitHeight="137.0" fitWidth="142.0" layoutX="41.0" layoutY="214.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/resFasaculty.png" />
