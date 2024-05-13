@@ -51,7 +51,7 @@
                <children>
                         <Pane fx:id="paneRight" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="385.0" prefWidth="634.0" styleClass="backgroundColor1" stylesheets="@../../../application.css">
                             <children>
-                                <TextField fx:id="tf_userName" layoutX="79.0" layoutY="191.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Username" style="-fx-background-color: pagie;" />
+                                <TextField fx:id="tf_id" layoutX="79.0" layoutY="191.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Username" style="-fx-background-color: pagie;" />
                                 <PasswordField fx:id="tf_password" layoutX="79.0" layoutY="244.0" prefHeight="35.0" prefWidth="310.0" promptText="Enter Password" />
                                 <Button fx:id="loginBtn" cancelButton="true" layoutX="57.0" layoutY="304.0" mnemonicParsing="false" onAction="#onLoginBtnClicked" prefHeight="35.0" prefWidth="332.0" text="LOGIN" textFill="WHITE" />
                                 <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="58.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">

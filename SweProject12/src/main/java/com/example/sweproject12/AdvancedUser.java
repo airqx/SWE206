@@ -5,7 +5,7 @@ import com.example.sweproject12.User;
 public class AdvancedUser extends User {
 
     public AdvancedUser(String id, String email, String password, boolean gender, String type) throws Exception {
-        super(id, email, password, gender, type); // Call parent constructor
+        super(id, email, password, gender); // Call parent constructor
     }
 
     // Methods specific to advanced user functionality

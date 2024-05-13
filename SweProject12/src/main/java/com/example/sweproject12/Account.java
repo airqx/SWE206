@@ -13,18 +13,15 @@ public class Account {
     private String email;
     private String password;
     private boolean gender;
-    private String type;
     private boolean loggedIn; // Track login status
 
     // Constructor to initialize the account object
-    public Account(String id, String email, String password, boolean gender, String type) throws Exception {
+    public Account(String id, String email, String password, boolean gender) throws Exception {
         this.id = id;
         this.email = email;
         this.password = password;
         this.gender = gender;
-        this.type = type;
         this.loggedIn = false; // Initially not logged in
-        byte[] passwordHash = hashPassword(password);
     }
 
     // Getter methods for accessing account information
@@ -43,10 +40,6 @@ public class Account {
 
     public boolean isGender() {
         return gender;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public boolean isLoggedIn() {

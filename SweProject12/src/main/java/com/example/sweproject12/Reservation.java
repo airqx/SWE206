@@ -4,6 +4,7 @@ import com.example.sweproject12.Account;
 import com.example.sweproject12.Room;
 import com.example.sweproject12.TimeSlot;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Reservation {
@@ -11,15 +12,14 @@ public class Reservation {
     private Account reserver;
     private Room room;
     private String reason;
-    private Date date;
+    private LocalDate date;
     private String status;
-    private TimeSlot time;
+    private String time;
 
     // Constructor to initialize the reservation object
-    public Reservation(Account reserver, Room room, String reason, Date date, String status, TimeSlot time) {
+    public Reservation(Account reserver, Room room, LocalDate date, String status, String time) {
         this.reserver = reserver;
         this.room = room;
-        this.reason = reason;
         this.date = date;
         this.status = status; // Example statuses: "Pending", "Confirmed", "Cancelled"
         this.time = time;
@@ -42,7 +42,7 @@ public class Reservation {
         return reason;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -50,7 +50,7 @@ public class Reservation {
         return status;
     }
 
-    public TimeSlot getTime() {
+    public String getTime() {
         return time;
     }
 

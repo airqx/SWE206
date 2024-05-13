@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Admin extends Account {
 
-    public Admin(String id, String email, String password, boolean gender, String type) throws Exception {
-        super(id, email, password, gender, type); // Call parent constructor
+    public Admin(String id, String email, String password, boolean gender) throws Exception {
+        super(id, email, password, gender); // Call parent constructor
     }
 
     // Additional methods specific to admin functionality

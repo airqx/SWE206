@@ -9,8 +9,8 @@ public class User extends Account {
     private ArrayList<Reservation> myReservations;
     private ArrayList<Event> myEvents;
 
-    public User(String id, String email, String password, boolean gender, String type) throws Exception {
-        super(id, email, password, gender, type);
+    public User(String id, String email, String password, boolean gender) throws Exception {
+        super(id, email, password, gender);
         myReservations = new ArrayList<Reservation>();
         myEvents = new ArrayList<Event>();
     }

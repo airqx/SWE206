@@ -1,53 +1,49 @@
-/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-#loginAnchorPane{
-    -fx-background-color: linear-gradient(to top right, #172235, #838FA3);
-}
-.backgroundColor{
-    -fx-background-color: linear-gradient(to right,#35B8C9,#008000);
+.backgroundColor {
+    /* Using HSL color */
+    -fx-background-color: #178850;
 }
 
-
+.backgroundColor1 {
+    -fx-background-color: linear-gradient(to top left, #549159, #178850);
+}
 
 .separator .line {
     -fx-border-width: 0.1;
 }
-#tf_userName{
-    -fx-background-color: transparent ;
-    -fx-text-fill: white;
+
+#tf_userName {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
 }
-#tf_password{
-    -fx-background-color: transparent ;
-    -fx-text-fill: white;
+
+#tf_password {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
 }
-#loginBtn{
-    -fx-background-color: transparent ;
-    -fx-border-style : solid;
+
+#loginBtn {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
     -fx-border-width: 2;
     -fx-text-fill: white;
     -fx-border-radius: 1.5em;
-    -fx-border-color: #838FA3;
-    -fx-cursor: HAND;
+    -fx-border-color: #FFFFFF;
 }
-#loginBtn:hover{
-    -fx-background-color: transparent ;
-    -fx-border-style : solid;
+
+#loginBtn:hover {
+    -fx-background-color: transparent;
+    -fx-border-style: solid;
     -fx-border-width: 2;
-    -fx-text-fill: white;
+    -fx-text-fill: #FFFFFF;
     -fx-border-radius: 1.5em;
-    -fx-border-color: #EEF0F2;
-    -fx-cursor: HAND;
+    -fx-border-color: #178850;
 }
 
-
-#textArea{
-    -fx-background-color: transparent ;
-    -fx-text-fill: white;
-}
-#forgotPass:hover{
-    -fx-text-fill: #069BFF;
-    -fx-cursor: HAND;
+#textArea {
+    -fx-background-color: none;
+    -fx-text-fill: #FFFFFF;
 }
 
-#closeBtn{
-    -fx-cursor: HAND;
+#forgotPass:hover {
+    -fx-text-fill: #178850;
 }
