@@ -9,7 +9,7 @@ import java.util.Base64;
 public class Account {
 
     // Declare attributes with proper access modifiers
-    private final String id;
+    private String id;
     private String email;
     private String password;
     private boolean gender;

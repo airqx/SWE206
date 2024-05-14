@@ -1,7 +1,5 @@
 package com.example.sweproject12;
 
-import com.example.sweproject12.User;
-
 public class AdvancedUser extends User {
 
     public AdvancedUser(String id, String email, String password, boolean gender, String type) throws Exception {

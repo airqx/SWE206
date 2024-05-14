@@ -28,7 +28,7 @@
                            </font>
                         </Label>
                         <Line endX="157.0" layoutX="115.0" layoutY="218.0" startX="-115.0" stroke="WHITE" />
-                        <Text fill="WHITE" layoutX="125.0" layoutY="469.0" opacity="0.5" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Prject" textAlignment="CENTER" />
+                        <Text fill="WHITE" layoutX="125.0" layoutY="469.0" opacity="0.5" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Project" textAlignment="CENTER" />
                         <ImageView fx:id="closeBtn" fitHeight="110.0" fitWidth="113.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/Capture-removebg-preview.png" />
@@ -39,6 +39,7 @@
                               <Image url="@../icon/rightkfupm.png" />
                            </image>
                         </ImageView>
+                        <Button fx:id="btn_LogOut" layoutY="474.0" mnemonicParsing="false" onAction="#onLogOutBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" text="LogOut" />
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -48,7 +49,7 @@
             </StackPane>
             <StackPane prefHeight="500.0" prefWidth="524.0" style="-fx-background-color: green;">
                <children>
-                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../application.css">
+                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css">
                      <children>
                         <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="452.0" layoutY="42.0" prefHeight="25.0" prefWidth="40.0" text="  Main" textAlignment="CENTER" textFill="#178850">
                            <font>
@@ -63,28 +64,22 @@
                            </font>
                         </Label>
                         <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
-                        <Button fx:id="btn_joinEvent" cancelButton="true" layoutX="38.0" layoutY="142.0" mnemonicParsing="false" onAction="#onJoinEventClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Join an open event" textFill="WHITE" />
-                        <Button fx:id="btn11" cancelButton="true" layoutX="262.0" layoutY="142.0" mnemonicParsing="false" onAction="#onOpenReservationClicked" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Open reservation event" textFill="WHITE" />
-                        <Button fx:id="btn111" cancelButton="true" layoutX="33.0" layoutY="357.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="153.0" styleClass="backgroundColor" text="Reserve facility" textFill="WHITE" />
-                        <Button fx:id="btn1111" cancelButton="true" layoutX="246.0" layoutY="357.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="184.0" styleClass="backgroundColor" text="View reservation" textFill="WHITE" />
-                        <ImageView fx:id="iconReserve" fitHeight="137.0" fitWidth="142.0" layoutX="41.0" layoutY="214.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
+                        <Button fx:id="btn_joinEvent" cancelButton="true" layoutX="23.0" layoutY="358.0" mnemonicParsing="false" onAction="#onJoinEventClicked" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #178850;" text="Join an open event" textFill="WHITE" />
+                        <Button fx:id="btn11" cancelButton="true" layoutX="23.0" layoutY="151.0" mnemonicParsing="false" onAction="#onReserveFacilityClicked" prefHeight="35.0" prefWidth="153.0" style="-fx-background-color: #178850;" text="Reserve facility" textFill="WHITE" />
+                        <Button fx:id="btn_viewReservation" cancelButton="true" layoutX="234.0" layoutY="151.0" mnemonicParsing="false" onAction="#onViewReBtnClicked" prefHeight="35.0" prefWidth="184.0" style="-fx-background-color: #178850;" text="View reservation" textFill="WHITE" />
+                        <ImageView fx:id="iconReserve" fitHeight="137.0" fitWidth="142.0" layoutX="31.0" layoutY="14.0" opacity="0.82" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/resFasaculty.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="iconGender" fitHeight="137.0" fitWidth="142.0" layoutX="267.0" layoutY="217.0" opacity="0.96" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="iconGender" fitHeight="104.0" fitWidth="107.0" layoutX="273.0" layoutY="33.0" opacity="0.96" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icon/gemderSpRoom.png" />
+                              <Image url="@../icon/View.PNG" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="iconJoin" fitHeight="137.0" fitWidth="142.0" layoutX="48.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="iconJoin" fitHeight="137.0" fitWidth="142.0" layoutX="38.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/joinAnopen.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fx:id="iconOpen" fitHeight="137.0" fitWidth="142.0" layoutX="279.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icon/openResevationIcon.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -98,7 +93,7 @@
       </HBox>
    </children>
    <stylesheets>
-      <URL value="@../../../application.css" />
-      <URL value="@../../../application.css" />
+      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
+      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
    </stylesheets>
 </AnchorPane>

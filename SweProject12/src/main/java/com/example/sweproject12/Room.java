@@ -1,7 +1,5 @@
 package com.example.sweproject12;
 
-import com.example.sweproject12.Account;
-
 public class Room {
 
     // Declare attributes for room details

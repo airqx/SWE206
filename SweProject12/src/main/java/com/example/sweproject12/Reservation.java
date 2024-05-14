@@ -1,11 +1,6 @@
 package com.example.sweproject12;
 
-import com.example.sweproject12.Account;
-import com.example.sweproject12.Room;
-import com.example.sweproject12.TimeSlot;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Reservation {
 

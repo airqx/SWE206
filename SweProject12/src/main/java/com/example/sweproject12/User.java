@@ -1,7 +1,5 @@
 package com.example.sweproject12;
 
-import com.example.sweproject12.Account;
-
 import java.util.ArrayList;
 
 public class User extends Account {
