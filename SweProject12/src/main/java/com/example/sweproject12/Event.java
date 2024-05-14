@@ -1,27 +1,28 @@
 package com.example.sweproject12;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Event {
 
-    private int eventId;
-    private User eventOrginizer;
+    static int eventId;
+    private Account eventOrginizer;
     private Room room;
     private Reservation reservation;
     private String status; // Example statuses: "Open", "In Progress", "Cancelled"
     private int capacity;
-    private ArrayList<User> participants; // Use ArrayList for dynamic participant list
+    private ArrayList<Account> participants; // Use ArrayList for dynamic participant list
 
     // Constructor to initialize the event object
-    public Event(int eventId, User eventOrginizer, Room room, Reservation reservation, String status, int capacity) {
-        this.eventId = eventId;
+    public Event( Account eventOrginizer, Room room, Reservation reservation, String status, int capacity) {
         this.eventOrginizer = eventOrginizer;
         this.room = room;
         this.reservation = reservation;
         this.status = status;
         this.capacity = capacity;
-        this.participants = new ArrayList<User>(); // Initialize empty participant list
+        this.participants = new ArrayList<Account>(Arrays.asList(eventOrginizer)); // Initialize empty participant list
+        eventId++;
     }
 
     // Getter methods for accessing event information
@@ -29,7 +30,7 @@ public class Event {
         return eventId;
     }
 
-    public User getEventOrginizer() {
+    public Account getEventOrginizer() {
         return eventOrginizer;
     }
 
@@ -49,7 +50,7 @@ public class Event {
         return capacity;
     }
 
-    public ArrayList<User> getParticipants() {
+    public ArrayList<Account> getParticipants() {
         return participants; // Return a copy to avoid modifying original list
     }
 

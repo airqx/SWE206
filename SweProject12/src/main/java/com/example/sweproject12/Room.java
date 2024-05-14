@@ -1,5 +1,7 @@
 package com.example.sweproject12;
 
+import java.util.Objects;
+
 public class Room {
 
     // Declare attributes for room details
@@ -47,5 +49,19 @@ public class Room {
     // Method to check eligibility based on room gender restriction (optional)
     public boolean checkEligible(User user) {
         return gender.equals("Unisex") || gender.equalsIgnoreCase(user.isGender() ? "Male" : "Female");
+    }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return Objects.equals(roomNumber, room.roomNumber) &&
+                Objects.equals(roomType, room.roomType) &&
+                Objects.equals(location, room.location) &&
+                Objects.equals(gender, room.gender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(roomNumber, roomType, location, gender);
     }
 }

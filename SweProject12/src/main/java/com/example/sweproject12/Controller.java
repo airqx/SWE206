@@ -13,18 +13,21 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Controller {
-    ArrayList<Room> rooms = new ArrayList<>();
+    static HashSet<Room> rooms = new HashSet<>();
     ArrayList<User> users = new ArrayList<>();
     ArrayList<Admin> admins = new ArrayList<>();
     ArrayList<AdvancedUser> advancedUsers = new ArrayList<>();
-    ArrayList<Reservation> reservations = new ArrayList<>();
+    static ArrayList<Reservation> reservations = new ArrayList<>();
     ArrayList<Event> events = new ArrayList<>();
     @FXML
     private PasswordField tf_password;
@@ -46,7 +49,16 @@ public class Controller {
     @FXML
     private ScrollPane myScrollPane;
     @FXML
+    private ScrollPane viewReservationsPane;
+    @FXML
+    private ScrollPane eventPane;
+    @FXML
     private VBox vboxContainer;
+    @FXML
+    private VBox reservationContainer;
+    @FXML
+    private VBox eventContainer;
+
     @FXML
     private Button btn_openEvent;
 
@@ -61,8 +73,54 @@ public class Controller {
 
         String id = tf_id.getText();
         String password = tf_password.getText();
-        if(tf_id.getText().equals("Admin")&& tf_password.getText().equals("1234")) {
-            try {
+        if (flag){
+            for (User user : users) {
+                if (user.getId().equals(id) && user.verifyPassword(password)) {
+                    me = user;
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (flag){
+
+        for (AdvancedUser advancedUser: advancedUsers) {
+            if (advancedUser.getId().equals(id) && advancedUser.verifyPassword(password)){
+                me = advancedUser;
+                flag = false;
+                break;
+            }
+        }
+        }
+        if (flag){
+
+            for (Admin admin: admins) {
+                if (admin.getId().equals(id) && admin.verifyPassword(password)){
+                    me = admin;
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (me == null) { // Check if me is still null
+            warnLabel.setVisible(true);
+            warnLabel.setText("Wrong ID or Password");
+            return; // Stop further execution if login is not successful
+        }
+        try {
+            if (me instanceof User){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("AfterLogin.fxml"));
+                Parent root = loader.load();
+
+                // Get the controller of the new scene
+                Controller newController = loader.getController();
+                if (me != null) {
+                    newController.lbl_paneLeft.setText("Welcome " + me.getId());
+                }
+                Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("After-Login");
+            } else if (me instanceof Admin) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminAfterLogin.fxml"));
                 Parent root = loader.load();
 
@@ -74,39 +132,11 @@ public class Controller {
                 Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.setTitle("Admin-After-Login");
-            } catch (Exception e) {
-                e.printStackTrace();
             }
-        }
-        else{
-        for (User user : users) {
-            if (user.getId().equals(id) && user.verifyPassword(password)) {
-                me = user;
-                flag = false;
-                break;
-            }
-        }
-        if (me == null) { // Check if me is still null
-            warnLabel.setVisible(true);
-            warnLabel.setText("Wrong ID or Password");
-            return; // Stop further execution if login is not successful
-        }
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AfterLogin.fxml"));
-            Parent root = loader.load();
-
-            // Get the controller of the new scene
-            Controller newController = loader.getController();
-            if (me != null) {
-                newController.lbl_paneLeft.setText("Welcome " + me.getId());
-            }
-            Stage stage = (Stage) loginAnchorPane.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.setTitle("After-Login");
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }}
+    }
 
     @FXML
     void onJoinEventClicked(ActionEvent event) {
@@ -170,7 +200,6 @@ public class Controller {
             Controller newController = loader.getController();
 
 
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -219,6 +248,17 @@ public class Controller {
             myScrollPane.setContent(vboxContainer);
             for (Room room:rooms) {
                 addContent(room);
+            }
+        }
+        if (viewReservationsPane == null) {
+            System.out.println("Error: viewReservationsPane is not initialized!");
+        } else {
+            reservationContainer = new VBox(10); // Adjust spacing as needed
+            viewReservationsPane.setContent(reservationContainer);
+            for (Reservation reservation:reservations) {
+                if(reservation.getReserver().equals(me)){
+                    viewReservationsContent(reservation);
+                }
             }
         }
     }
@@ -388,6 +428,124 @@ public class Controller {
             timeChoiceBox.getSelectionModel().selectFirst();
         }
     }
+
+    private void viewReservationsContent(Reservation reservation) {
+        VBox reservationBox = new VBox(10); // Provides vertical spacing between elements
+
+        // Top row containing the room number, location, and type
+        HBox topRow = new HBox(10); // Spacing between elements in HBox
+        topRow.setStyle("-fx-background-color: lightblue; -fx-padding: 5;");
+
+        VBox roomBox = new VBox(2);
+        roomBox.getChildren().addAll(new Label("Room"), new Label(reservation.getRoom().getRoomNumber()));
+
+        VBox locationBox = new VBox(2);
+        locationBox.getChildren().addAll(new Label("Location"), new Label(reservation.getRoom().getLocation()));
+
+        VBox statusBox = new VBox(2);
+        statusBox.getChildren().addAll(new Label("Status"), new Label(reservation.getStatus()));
+
+        VBox dateBox = new VBox(2);
+        dateBox.getChildren().addAll(new Label("Date"), new Label((reservation.getDate().format(DateTimeFormatter.ofPattern("yyyy/MM/dd")))));
+
+        VBox timeBox = new VBox(2);
+        timeBox.getChildren().addAll(new Label("Time"), new Label(reservation.getTime()));
+
+        topRow.getChildren().addAll(roomBox, locationBox, statusBox,dateBox,timeBox); // Add to top row
+
+        // Second row for gender, date picker, time choice, and reserve button
+        HBox secondRow = new HBox(10); // Spacing and layout management
+        secondRow.setStyle("-fx-padding: 5;");
+
+
+        // Update initially for today or another default date
+
+        Button cancelButton = new Button("Delete");
+        Button eventButton = new Button("Open an Event");
+        Label participantsLabel = new Label();
+        cancelButton.setOnAction(event -> {
+            reservations.remove(reservation);
+            reservationContainer.getChildren().remove(reservationBox);
+        });
+
+        eventButton.setOnAction(event -> {
+            Stage popupStage = new Stage();
+            popupStage.setTitle("Open an Event");
+
+            VBox vbox = new VBox(10);
+
+            // Create input fields
+            TextField capacityField = new TextField();
+            capacityField.setPromptText("Capacity");
+
+            TextField reasonField = new TextField();
+            reasonField.setPromptText("Reason");
+
+            TextFormatter<String> capacityFormatter = new TextFormatter<>(change -> {
+                String newText = change.getControlNewText();
+                if (newText.matches("[0-9]{0,2}")) {
+                    return change;
+                }
+                return null;
+            });
+
+            capacityField.setTextFormatter(capacityFormatter);
+
+            // Create submit button
+            Button submitButton = new Button("Submit");
+            submitButton.setOpacity(0.5);
+            submitButton.setDisable(true);
+
+            // Add listeners to the text fields to update the button's state
+            capacityField.textProperty().addListener((observable, oldValue, newValue) -> {
+                boolean isCapacityValid = !capacityField.getText().isEmpty();
+                boolean isReasonValid = !reasonField.getText().trim().isEmpty();
+                boolean isFormValid = isCapacityValid && isReasonValid;
+                submitButton.setOpacity(isFormValid ? 1.0 : 0.5);
+                submitButton.setDisable(!isFormValid);
+            });
+            reasonField.textProperty().addListener((observable, oldValue, newValue) -> {
+                boolean isCapacityValid = !capacityField.getText().isEmpty();
+                boolean isReasonValid = !reasonField.getText().trim().isEmpty();
+                boolean isValid = isCapacityValid && isReasonValid;
+                submitButton.setOpacity(isValid ? 1.0 : 0.5);
+                submitButton.setDisable(!isValid);
+            });
+
+            submitButton.setOnAction(e -> {
+                int capacity = Integer.parseInt(capacityField.getText());
+                String reason = reasonField.getText();
+
+                // Handle the submission logic here
+                Event event1 = new Event(me,reservation.getRoom(),reservation,"Open",capacity);
+                events.add(event1);
+
+                // Close the popup window
+                popupStage.close();
+                eventButton.setVisible(false);
+                participantsLabel.setText(event1.getParticipants().size() +"/" + Integer.parseInt(capacityField.getText()));
+                participantsLabel.setVisible(true);
+            });
+
+            // Add input fields and button to the VBox
+            vbox.getChildren().addAll(new Label("Capacity:"), capacityField, new Label("Reason:"), reasonField, submitButton);
+
+            Scene scene = new Scene(vbox, 300, 200);
+            popupStage.setScene(scene);
+            popupStage.show();
+        });
+
+
+        secondRow.getChildren().addAll( cancelButton,eventButton,participantsLabel);
+
+        // Add both rows to the main container
+        reservationBox.getChildren().addAll(topRow, secondRow);
+        reservationContainer.getChildren().add(reservationBox);
+    }
+
+
+
+
 
 
 

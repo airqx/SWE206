@@ -84,4 +84,8 @@ public class Account {
         return Base64.getEncoder().encode(hashAndSalt); // Encode for storage
 
     }
+    @Override
+    public boolean equals(Object account) {
+        return this == account;
+    }
 }
