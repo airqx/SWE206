@@ -1,3 +1,4 @@
+
 .backgroundColor {
     /* Using HSL color */
     -fx-background-color: #178850;
@@ -5,6 +6,9 @@
 
 .backgroundColor1 {
     -fx-background-color: linear-gradient(to top left, #549159, #178850);
+}
+.backgroundColor2 {
+    -fx-background-color: linear-gradient(to bottom right, #008540, #DAC961,#00573F);
 }
 
 .separator .line {

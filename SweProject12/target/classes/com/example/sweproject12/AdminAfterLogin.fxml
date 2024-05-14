@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,13 +13,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.Controller">
+<AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.Controller">
    <children>
-      <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0" style="-fx-background-color: #DAC961;">
+      <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0" style="-fx-background-color: white;">
          <children>
             <StackPane prefHeight="500.0" prefWidth="273.0" style="-fx-background-color: green;">
                <children>
-                  <Pane fx:id="paneLeft" prefHeight="500.0" prefWidth="290.0" style="-fx-background-color: #DAC961;">
+                  <Pane fx:id="paneLeft" prefHeight="500.0" prefWidth="290.0" styleClass="backgroundColor2" stylesheets="@../../../application.css">
                      <children>
                         <Label fx:id="lbl_paneLeft" layoutX="32.0" layoutY="179.0" prefHeight="25.0" prefWidth="209.0" textFill="WHITE">
                            <font>
@@ -39,7 +38,6 @@
                               <Image url="@../icon/rightkfupm.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="btn_LogOut" layoutY="474.0" mnemonicParsing="false" onAction="#onLogOutBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" text="LogOut" />
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -86,8 +84,4 @@
          </children>
       </HBox>
    </children>
-   <stylesheets>
-      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
-      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
-   </stylesheets>
 </AnchorPane>

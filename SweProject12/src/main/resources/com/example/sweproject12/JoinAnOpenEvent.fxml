@@ -41,7 +41,7 @@
                               <Image url="@../icon/rightkfupm.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="btn_back" layoutX="3.0" layoutY="474.0" mnemonicParsing="false" onAction="#onBackBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" text="Back" />
+                        <Button fx:id="btn_back" layoutX="3.0" layoutY="474.0" mnemonicParsing="false" onAction="#onBackBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../application.css" text="Back" />
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -51,7 +51,7 @@
             </StackPane>
             <StackPane prefHeight="500.0" prefWidth="524.0" style="-fx-background-color: green;">
                <children>
-                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css">
+                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../application.css">
                      <children>
                         <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="37.0" prefHeight="17.0" prefWidth="87.0" text="Join Event" textAlignment="CENTER" textFill="#178850">
                            <font>
@@ -86,7 +86,7 @@
       </HBox>
    </children>
    <stylesheets>
-      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
-      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
+      <URL value="@../../../application.css" />
+      <URL value="@../../../application.css" />
    </stylesheets>
 </AnchorPane>

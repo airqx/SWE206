@@ -5,10 +5,7 @@ import java.util.Objects;
 public class Room {
 
     // Declare attributes for room details
-    private String roomNumber;
-    private String roomType;
-    private String location;
-    private String gender; // Consider using an enum for better representation
+    private String roomNumber,roomType,location,gender;
     private boolean available; // Track room availability
 
     // Constructor to initialize the room object

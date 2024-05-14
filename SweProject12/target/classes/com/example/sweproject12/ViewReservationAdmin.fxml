@@ -18,11 +18,11 @@
 
 <AnchorPane fx:id="loginAnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="backgroundColor" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweproject12.Controller">
    <children>
-      <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0">
+      <HBox prefHeight="500.0" prefWidth="800.0" spacing="5.0" style="-fx-background-color: white;">
          <children>
-            <StackPane prefHeight="500.0" prefWidth="273.0" style="-fx-background-color: green;">
+            <StackPane prefHeight="500.0" prefWidth="273.0" styleClass="backgroundColor2" stylesheets="@../../../application.css">
                <children>
-                  <Pane fx:id="paneLeft" prefHeight="500.0" prefWidth="345.0" styleClass="backgroundColor" stylesheets="@../../../application.css">
+                  <Pane fx:id="paneLeft" prefHeight="500.0" prefWidth="290.0">
                      <children>
                         <Label fx:id="lbl_paneLeft" layoutX="32.0" layoutY="179.0" prefHeight="25.0" prefWidth="209.0" textFill="WHITE">
                            <font>
@@ -30,18 +30,18 @@
                            </font>
                         </Label>
                         <Line endX="157.0" layoutX="115.0" layoutY="218.0" startX="-115.0" stroke="WHITE" />
-                        <Text fill="WHITE" layoutX="98.0" layoutY="470.0" opacity="0.5" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Project" textAlignment="CENTER" />
+                        <Text fill="WHITE" layoutX="100.0" layoutY="470.0" opacity="0.9" strokeMiterLimit="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="© SWE Project" textAlignment="CENTER" />
                         <ImageView fx:id="closeBtn" fitHeight="110.0" fitWidth="113.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icon/Capture-removebg-preview.png" />
+                              <Image url="@../icon/LOGO-05.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="closeBtn1" fitHeight="77.0" fitWidth="227.0" layoutX="23.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="closeBtn1" fitHeight="77.0" fitWidth="227.0" layoutX="25.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../icon/rightkfupm.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="btn_back" layoutX="3.0" layoutY="474.0" mnemonicParsing="false" onAction="#onBackBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../application.css" text="Back" />
+                        <Button fx:id="btn_backAdmin" layoutX="-3.0" layoutY="474.0" mnemonicParsing="false" onAction="#onBackAdminBtnClicked" prefHeight="17.0" prefWidth="71.0" stylesheets="@../../../application.css" text="Back" />
                      </children>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
@@ -51,9 +51,9 @@
             </StackPane>
             <StackPane prefHeight="500.0" prefWidth="524.0" style="-fx-background-color: green;">
                <children>
-                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="466.0" style="-fx-background-color: white;" stylesheets="@../../../application.css">
+                  <Pane fx:id="LoginPane" cacheShape="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="500.0" prefWidth="528.0" style="-fx-background-color: white;" stylesheets="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css">
                      <children>
-                        <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="37.0" prefHeight="17.0" prefWidth="87.0" text="Join Event" textAlignment="CENTER" textFill="#178850">
+                        <Label fx:id="aa" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="42.0" prefHeight="25.0" prefWidth="78.0" text="View-Admin" textAlignment="CENTER" textFill="#178850">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -66,11 +66,11 @@
                            </font>
                         </Label>
                         <Label fx:id="warnLabelClose" layoutX="392.0" layoutY="400.0" prefHeight="17.0" prefWidth="10.0" text="X" textFill="WHITE" visible="false" />
-                        <ScrollPane fx:id="eventPane" layoutX="2.0" layoutY="77.0" prefHeight="279.0" prefWidth="520.0">
+                        <ScrollPane fx:id="viewReservationsPane" layoutX="2.0" layoutY="82.0" prefHeight="279.0" prefWidth="520.0">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
                                  <children>
-                                    <VBox fx:id="eventContainer" prefHeight="279.0" prefWidth="499.0" />
+                                    <VBox fx:id="reservationContainer" prefHeight="279.0" prefWidth="499.0" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -86,7 +86,7 @@
       </HBox>
    </children>
    <stylesheets>
-      <URL value="@../../../application.css" />
-      <URL value="@../../../application.css" />
+      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
+      <URL value="@../../../../../../../../../../Desktop/SWE206-Almoghairi-patch-1/SWE206-Almoghairi-patch-1/SWE206-Edit12/src/main/resources/application.css" />
    </stylesheets>
 </AnchorPane>
